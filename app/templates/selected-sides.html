@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for ( 'static', filename = 'selected-page.css') }} ">
+</head>
+<body>
+
+{% include 'partials/navbar.html' %}
+
+    <section>
+
+        {% for types in sides %}
+            {% if types.name == selected_food %}
+
+        <div id = 'selected-food-container'>
+            <div id='selected-food-image'>
+                <img src="/static/images/{{ types.img_link }} " width="500px" alt=" {{ types.img_link }} ">
+           </div>
+ 
+
+            <div id = 'selected-food-sidebar'>
+                    <h2>
+                        {{ types.name }}
+                        <div id="h">Price: ${{ types.price }}</div>
+                        {% endif %}
+
+                    </h2>
+                    
+            {% endfor %}
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, officia? Temporibus iste fuga quis ratione asperiores ab illo quod amet ipsa reprehenderit sapiente debitis, reiciendis possimus placeat eaque ea ex.
+
+                    </p>
+
+                    
+                    <div class='sides-images' >
+
+
+
+                        <div class="condiments-images">
+                            {% for condiment in condiments  %}
+                            {% if condiment.name in order %}
+                                <a href="{{ url_for('selecte', id = condiment.name, selected_food=selected_food)   }}">
+                                    <span><img src="/static/images/{{ condiment.img_link }}" width = '80px' ></span>
+                                </a>
+                            {% else %}
+                                <a href="{{ url_for('selecte', id = condiment.name, selected_food=selected_food)   }}">
+                                    <span><img src="/static/images/{{ condiment.img_link }}" width = '67px' ></span>
+                                </a>
+                            {% endif %}
+                            {% endfor %}
+
+
+
+                </div>
+                {% for types in sides %}
+                {% if types.name == selected_food %}
+    
+                    
+                    <button style=""><a href="{{ url_for('add_to_cart', food_name = selected_food, price = types.price  ) }}"> Add To Cart </a></button>
+                {% endif %}
+                {% endfor %}
+            
+
+            
+            </div>
+            
+        </div>
+
+
+  
+    </section>
+
+<script>
+    function clickimageone(el){
+	el.style.border = "1px solid blue";
+    }
+</script>
+
+
+</body>
+</html>
+
+

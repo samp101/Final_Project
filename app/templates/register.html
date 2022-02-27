@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for ( 'static', filename = 'register.css') }} ">
+
+</head>
+<body>
+<div>
+        <a href="{{ url_for('login') }}">Sign In</a>
+               
+    </div>
+<section>
+    <div class="form-cont">
+        <form class="form-cont-form" method="POST">
+            {{ form.hidden_tag() }}
+
+            {{ form.name.label }}
+            {{ form.name(size=32) }}
+            <br>
+            {{ form.last_name.label }}
+            {{ form.last_name(size=32) }}
+            <br>
+            {{ form.country.label }}
+            {{ form.country(size=32) }}
+            <br>
+            {{ form.city.label }}
+            {{ form.city(size=32) }}
+            <br>
+            {{ form.street.label }}
+            {{ form.street(size=32) }}
+            <br>
+            {{ form.house_number.label }}
+            {{ form.house_number(size=32) }}
+            <br>
+            {{ form.phone_num.label }}
+            {{ form.phone_num(size=32) }}
+            <br>
+            {{ form.email.label }}
+            {{ form.email(size=32) }}
+            <br>
+            {{ form.username.label }}
+            {{ form.username(size=32) }}
+            <br>
+            {{ form.password.label }}
+            {{ form.password(size=32) }}
+
+            <br>
+            <button class="btn btn-primary">
+                {{ form.submit() }}
+            </button>
+    </form>
+    </div>
+</section>
+    
+</body>
+</html>

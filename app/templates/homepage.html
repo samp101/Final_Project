@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for ( 'static', filename = 'login.css') }} ">
+</head>
+<body>
+{% include 'partials/navbar.html' %}
+
+<section>
+    <div id = main-cont>
+        <div class = 'form-cont'>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+            
+            <div id = form-field>
+
+                    <h1 style = 'color:rgba(255, 122, 0, 1)' >Login</h1>
+                <div>
+                    {{ form.user_name.label }}
+                    <br>
+                    {{ form.user_name(class='input' ) }}
+                </div>
+                <div class="">
+                    {{ form.password.label }}
+                    <br>
+                    {{ form.password(size=32,class='input pass') }}
+                    <div class = 'form-flash'>
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <ul class=flashes>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                        {% endif %}
+                    {% endwith %}
+                
+                
+                        </div>
+                </div>
+                <span style = 'color:rgba(255, 122, 0, 1)' >
+                    {{ form.submit(class = 'sub-button') }}
+                </span>
+            <div id='register'>Don’t have an account?  <a href="{{ url_for('register') }}">Create account</a></div>    
+        </div>
+            
+        </form>
+        </div>
+        <div class='gif-img'>
+            <img src="./static/images/Group-2.gif" alt="" width='500px'>
+        </div>
+    </div>
+   
+</section>
+
+
+</body>
+</html>

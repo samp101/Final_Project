@@ -1,0 +1,60 @@
+body{
+    margin:0px
+}
+
+section{
+    width:100vw;
+    height:90vh;
+    
+    
+    
+}
+#main-cont{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    
+    
+}
+
+.form-cont{
+    height:400px;
+    width:469px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 80px;
+}
+form{
+    width: inherit;
+    height: inherit;
+}
+#form-field{
+    height:80%;
+    width: 100%;
+    padding:20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.input{
+    width:80%;
+    border-radius: 7px;
+    height:40px;
+}
+.pass{
+
+}
+.sub-button{
+    background-color: rgba(255, 122, 0, 1);
+    border-radius: 20px;
+    border: none;
+    padding: 7px 100px 7px 100px;
+   
+    margin-top: 20px;
+}
+
+#register{
+ 
+    bottom: 0px;
+}

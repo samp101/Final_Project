@@ -1,0 +1,36 @@
+body{
+    margin:0px;
+}
+
+section{
+    height: 200vh;
+    width: 98vw;
+
+}
+#card-cont-all{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:flex-start ;
+    flex-wrap: wrap;
+
+
+   
+}
+.cards{
+    border-radius: ;
+    margin-top: 50px;
+}
+.cards img{
+    width:350px;
+    height:350px;
+}
+.info{
+    font-family: 'Poppins', sans-serif;
+    color : rgba(5, 12, 80, 1);
+    font-weight: 600;
+    
+}
+
+#a{
+    text-decoration: none;
+}
